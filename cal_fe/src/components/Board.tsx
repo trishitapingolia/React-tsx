@@ -99,14 +99,14 @@ const Board = () => {
 
 
             
-            <Modal size='lg' show={show} onHide={handleClose}>
+            <Modal size='sm' centered={true} show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                     <strong>History</strong>
                     </Modal.Header>
                     <Modal.Body>
-                        {history.map((item, index) => (
+                        {history.length>0?history.map((item, index) => (
                             <div key={index}>{index+1}: {item.expression}, Result: {item.result}</div>
-                        ))}
+                        )):"There's no history yet!"}
                 </Modal.Body>
             </Modal>
         </div>
